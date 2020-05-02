@@ -19,9 +19,9 @@ PRODUCT_COPY_FILES := \
     $(LOCAL_PATH)/fstab.ramdisk:$(TARGET_COPY_OUT_RAMDISK)/etc/fstab.db410c \
     device/linaro/dragonboard-kernel/$(TARGET_PREBUILT_KERNEL):kernel \
     device/linaro/dragonboard/fstab.common:$(TARGET_COPY_OUT_VENDOR)/etc/init/fstab.db410c \
-    device/linaro/dragonboard/init.common.rc:root/init.db410c.rc \
-    device/linaro/dragonboard/init.common.usb.rc:root/init.db410c.usb.rc \
-    device/linaro/dragonboard/common.kl:system/usr/keylayout/db410c.kl
+    device/linaro/dragonboard/init.common.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.db410c.rc \
+    device/linaro/dragonboard/init.common.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.db410c.usb.rc \
+    device/linaro/dragonboard/common.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/db410c.kl
 
 # Dalvik/ART Heap Configuration
 PRODUCT_PROPERTY_OVERRIDES := \
