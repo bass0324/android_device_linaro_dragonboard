@@ -2,8 +2,8 @@ import /vendor/etc/init/hw/init.${ro.hardware}.usb.rc
 import /vendor/etc/init/hw/init.${ro.hardware}.power.rc
 
 on fs
-    mount_all /fstab.${ro.hardware}
-    swapon_all /fstab.${ro.hardware}
+    mount_all /vendor/etc/init/fstab.${ro.hardware}
+    swapon_all /vendor/etc/init/fstab.${ro.hardware}
     setprop ro.crypto.fuse_sdcard false
 
 on init
