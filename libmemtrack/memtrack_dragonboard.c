@@ -26,6 +26,22 @@ int hikey_memtrack_init(const struct memtrack_module *module)
     return 0;
 }
 
+int dragonboard_memtrack_get_memory(const struct memtrack_module *module,
+                                pid_t pid,
+                                int type,
+                                struct memtrack_record *records,
+                                size_t *num_records)
+{
+    if(!module)
+        return -1;
+    if (type == MEMTRACK_TYPE_GL || type == MEMTRACK_TYPE_GRAPHICS) {
+        return kgsl_memtrack_get_memory(pid, type, records, num_records);
+    }
+
+    return -EINVAL;
+}
+
+
 static struct hw_module_methods_t memtrack_module_methods = {
     .open = NULL,
 };
@@ -42,4 +58,5 @@ struct memtrack_module HAL_MODULE_INFO_SYM = {
     },
 
     .init = hikey_memtrack_init,
+    .getMemory = dragonboard_memtrack_get_memory,
 };
