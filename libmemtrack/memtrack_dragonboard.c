@@ -18,7 +18,7 @@
 
 #include <hardware/memtrack.h>
 
-int hikey_memtrack_init(const struct memtrack_module *module)
+int dragonboard_memtrack_init(const struct memtrack_module *module)
 {
     if (!module)
         return -1;
@@ -57,6 +57,6 @@ struct memtrack_module HAL_MODULE_INFO_SYM = {
         .methods = &memtrack_module_methods,
     },
 
-    .init = hikey_memtrack_init,
+    .init = dragonboard_memtrack_init,
     .getMemory = dragonboard_memtrack_get_memory,
 };
