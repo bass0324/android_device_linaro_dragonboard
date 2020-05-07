@@ -29,11 +29,6 @@ PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
 # vndk
 PRODUCT_PACKAGES := vndk-sp
 
-# HACK: Avoid usb crash
-PRODUCT_PRODUCT_PROPERTIES := \
-    persist.adb.nonblocking_ffs=0 \
-    ro.adb.nonblocking_ffs=0
-
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
