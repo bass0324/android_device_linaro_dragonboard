@@ -136,7 +136,7 @@ PRODUCT_PACKAGES += android.hardware.gnss@1.0-impl
 
 # Memtrack
 PRODUCT_PACKAGES += \
-    memtrack.default \
+    memtrack.dragonboard \
     android.hardware.memtrack@1.0-service \
     android.hardware.memtrack@1.0-impl
 
