@@ -1,3 +1,9 @@
 # audit2allow
 # symlink /sdcard /mnt/sdcard
 allow init tmpfs:lnk_file create;
+
+allow init sysfs_iio:lnk_file read;
+
+allow init {
+    sysfs_iio
+}:file setattr;
