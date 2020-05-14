@@ -18,6 +18,8 @@
 
 #include <hardware/memtrack.h>
 
+#include "memtrack_dragonboard.h"
+
 int dragonboard_memtrack_init(const struct memtrack_module *module)
 {
     if (!module)
